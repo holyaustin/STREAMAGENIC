@@ -65,10 +65,10 @@ export default function Header() {
           <a>Home</a>
           </Link>
           <Link href="/dashboard">
-          <a>Explore VOD</a>
+          <a>Explore NOD</a>
           </Link>
           <Link href="/addfile">
-          <a>Mint Video</a>
+          <a>Publish News</a>
           </Link>
           <Link href="/addfolder">
           <a>Video Marketplace</a>

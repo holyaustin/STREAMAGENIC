@@ -214,7 +214,7 @@ export default function Watching() {
         <p style={{ height: "20px" }} className="text-xl font-semibold">Publisher: {nft.owner}</p>
       </div>
       <br/>
-      <div className="p-1">
+      <div className="p-1 mb-5">
         <p style={{ height: "20px" }} className="text-xl font-semibold">IPFS Link : {nft.sharelink}</p>
       </div>
       <br/>

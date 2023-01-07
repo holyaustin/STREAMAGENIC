@@ -1,7 +1,7 @@
 import { useCreateStream } from '@livepeer/react';
 import { useState } from 'react';
 
-export const Stream = () => {
+export default function Stream () {
  const [streamName, setStreamName] = useState('');
  const {
  mutate: createStream,

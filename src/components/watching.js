@@ -9,11 +9,28 @@ import { useRouter } from 'next/router'
 import { useNavigate, useLocation } from "react-router-dom";
 import Web3Modal from "web3modal";
 import { rgba } from 'polished';
+import ShareLink from "react-twitter-share-link";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
 import fileNFT from "../../artifacts/contracts/Genic.sol/FileNFT.json";
 import { fileShareAddress } from "../../config";
+
+const containerStyle = {
+  position: "relative",
+  overflow: "hidden",
+  width: "100%",
+  paddingTop: "56.25%", /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+};
+const responsiveIframe = {
+  position: "absolute",
+  top: "0",
+  left: "0",
+  bottom: "0",
+  right: "0",
+  width: "100%",
+  height: "100%",
+};
 
 export default function Watching() {
   console.log('Entered watching component');
@@ -37,7 +54,7 @@ export default function Watching() {
     router.push("/dashboardLive");
   }
   async function Claim() {
-    router.push("/claim");
+    alert("This feature is under development because we want to give you the best expereince");
   }
   const rpcUrl = "https://matic-mumbai.chainstacklabs.com";
    // const rpcUrl = "localhost";
@@ -51,13 +68,7 @@ export default function Watching() {
       console.log("loading News for item", props.vid);
     const vid = props.vid;
     console.log("vid is ", vid);
-    /**
-    const provider = new ethers.providers.JsonRpcProvider(rpcUrl);
-    const contract = new ethers.Contract(fileShareAddress, fileNFT.abi, provider);
 
-    const data = await contract.fetchOneNews(vid);
-    
-    */
     const web3Modal = new Web3Modal({
       network: 'mainnet',
       cacheProvider: true,
@@ -227,7 +238,7 @@ export default function Watching() {
   
 		<div className="col-span-3 text-white pt-3  text-xl flex items-center justify-center">
     <div className="p-4">
-                  <button type="button" className="w-full bg-blue-800 text-white font-bold py-2 px-12 border-b-4 border-blue-200 hover:border-blue-500 rounded-full" onClick={() => Live()}>Drop your comment</button>
+                  <button type="button" className="w-full bg-blue-800 text-white font-bold py-2 px-12 border-b-4 border-blue-200 hover:border-blue-500 rounded-full" onClick={() => Claim()}>Drop your comment</button>
                 </div>
     <div className="p-4">
                   <button type="button" className="w-full bg-blue-800 text-white font-bold py-2 px-12 border-b-4 border-blue-200 hover:border-blue-500 rounded-full">
@@ -242,7 +253,12 @@ export default function Watching() {
                   </button>
                 </div>
                 <div className="p-4">
-                  <button type="button" className="w-full bg-blue-800 text-white font-bold py-2 px-12 border-b-4 border-blue-200 hover:border-blue-500 rounded-full" onClick={() => Claim()}> Share on Twitter</button>
+                <ShareLink link="https://talentmusica.vercel.app/explore" text="Discover amazing musical talent here!" hashtags="blockchaintechnology alt_layer Layer2 holyaustin ">
+              {(link) => (
+                  <button type="button" className="w-full bg-blue-800 text-white font-bold py-2 px-12 border-b-4 border-blue-200 hover:border-blue-500 rounded-full">                   
+                  <a href={link} target="_blank" rel="noreferrer">Share on Twitter</a></button>
+                  )}
+            </ShareLink>
                 </div>
 
             

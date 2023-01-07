@@ -64,10 +64,10 @@ export default function Header() {
           <Link href="/">
           <a>Home</a>
           </Link>
-          <Link href="/dashboard">
+          <Link href="/explore">
           <a>Explore NOD</a>
           </Link>
-          <Link href="/addfile">
+          <Link href="/publishnews">
           <a>Publish News</a>
           </Link>
           <Link href="/addfolder">

@@ -168,19 +168,16 @@ export default function Watching() {
       </div>
       <div className="grid grid-cols-3 grid-rows-2 col-gap-2 row-gap-5 mx-20 my-5">
 
-	<div className="col-start-1 col-end-3 row-span-2 text-white bg-blue-300 text-4xl flex items-center justify-center border-4 border-red-500">
+	<div className="col-start-1 col-end-3 row-span-2 text-white bg-black text-4xl flex items-center justify-center border-4 border-red-500" style={containerStyle}>
 
   <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 pt-4">
 {nfts.map((nft, i) => (
-    <div key={i} className="shadow rounded-xl overflow-hidden w-full">
+    <div key={i} className="shadow rounded-xl overflow-hidden min-w-full " style={responsiveIframe}>
       <iframe
-        title="Car Pics"
-        //frameBorder="0"
-        //scrolling="no"
-        //height="450px"
-        //width="100%"
-        src={`${nft.image}#toolbar=0&embedded=true`}
-        className="py-3 object-coverh-500"
+        title="video"
+        style={responsiveIframe}
+        src={`${nft.image}#toolbar=0`}
+        className="py-3 object-cover h-full"
       />
 
     </div>
@@ -253,7 +250,7 @@ export default function Watching() {
                   </button>
                 </div>
                 <div className="p-4">
-                <ShareLink link="https://talentmusica.vercel.app/explore" text="Discover amazing musical talent here!" hashtags="blockchaintechnology alt_layer Layer2 holyaustin ">
+                <ShareLink link="https://streamagenic.vercel.app/explore" text="News on Demand from eye witness all around the globe!" hashtags="blockchaintechnology streamagenic Livepeer holyaustin IPFS">
               {(link) => (
                   <button type="button" className="w-full bg-blue-800 text-white font-bold py-2 px-12 border-b-4 border-blue-200 hover:border-blue-500 rounded-full">                   
                   <a href={link} target="_blank" rel="noreferrer">Share on Twitter</a></button>

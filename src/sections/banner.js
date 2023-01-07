@@ -29,7 +29,7 @@ const Banner = () => {
             <Heading>STREAMAGENIC</Heading>
             <div style={{fontSize: '24px', marginRight: '0.5rem', fontWeight: 'bold'}}>
               <p>
-              Decentralized video storage and sharing platform. Where you can explore new video on demand and share them with friends and loved ones. Try it out!.
+              Decentralized Video News Sharing Platform. Where you can explore video News on Demand (NOD) and share them with friends and loved ones. Contribute as an eye witness by publishing your news here. Try it out, Its entirely free!.
               </p>
               <br />
             </div>

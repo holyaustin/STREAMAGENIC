@@ -11,7 +11,7 @@ Genic is a web3 project with the aim of helping creators store video files and s
 ## Web 3.0 technologies Used
 
 Frontend: NextJS, postcss, tailwindcss, Theme
-web3 technologies: IPFS/filecoin (W3UI), Livepeer, Web3Modal, XMTP, NFT Port, ENS, Lit Protocol, Polygon, Graph, Lens, Huddle  
+web3 technologies: IPFS/filecoin (W3UI), Livepeer (livepeer.js), Web3Modal, XMTP, NFT Port, ENS, Lit Protocol, Polygon, Graph, Lens, Huddle  
 Backend: Solidity, Node.js
 
 Blockchain deployed to:  Polygon POS Mumbai Testnet

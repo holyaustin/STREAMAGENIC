@@ -8,10 +8,13 @@ import axios from "axios";
 import { useRouter } from 'next/router'
 import { useNavigate, useLocation } from "react-router-dom";
 import Web3Modal from "web3modal";
+import { Player } from '@livepeer/react';
+import Image from 'next/image';
 import { rgba } from 'polished';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
+import blenderPoster from '../../public/images/logoonlyblue.png';
 import fileNFT from "../../artifacts/contracts/Genic.sol/FileNFT.json";
 import { fileShareAddress } from "../../config";
 
@@ -93,6 +96,19 @@ export default function ViewFiles() {
       console.log('Prop result is ', { vid } )
   }
 
+  const PosterImage = () => {
+    return (
+      <Image
+        src={blenderPoster}
+        layout="fill"
+        objectFit="cover"
+        priority
+        placeholder="blur"
+      />
+    );
+  };
+
+
   if (loadingState === "loaded" && !nfts.length) {
     return (
       <div sx={styles.section}>
@@ -112,6 +128,7 @@ export default function ViewFiles() {
           {nfts.map((nft, i) => (
 
             <div key={i} className="shadow rounded-xl overflow-hidden border-2 border-white-500">
+              
               <iframe
                 title="fileNFT"
                 height="auto"
@@ -120,6 +137,18 @@ export default function ViewFiles() {
                 src={`${nft.image}#toolbar=0&embedded=true`}
                 className="py-3 object-cover h-500"
               />
+          
+{/** 
+<Player
+      title="Agent 327: Operation Barbershop"
+      playbackId="6d7el73r1y12chxr"
+      poster={<PosterImage />}
+      showPipButton
+      objectFit="cover"
+      priority
+    />
+*/}
+
               <div className="p-1">
                 <p style={{ height: "45px", overflow: 'hidden' }} className="text-xl text-blue-800 font-semibold leading-none"> {nft.name}      </p>
                 <p className="text-xl font-bold text-black pt-2">Size : {nft.size}  MB </p>
@@ -137,8 +166,8 @@ export default function ViewFiles() {
               {/** onClick={() => share(nft)} */}
               <div className="p-2 bg-black">
               <Popup trigger={<button type="button" className="w-full bg-purple-700 text-white font-bold py-2 px-2 rounded" >Get Share Link</button>} 
-                  position="bottom center">
-                <div className=" bg-purple-200 text-black font-bold py-2 px-2 rounded">{nft.sharelink}</div>
+                  position="bottom left">
+                <div className=" bg-blue-200 text-black font-bold py-2 px-2 rounded">{nft.sharelink}</div>
                 <button onClick={() => copyToClipBoard([nft.sharelink])}>Copy Link</button>
                 
                  {copySuccess}

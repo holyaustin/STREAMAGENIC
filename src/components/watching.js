@@ -8,11 +8,14 @@ import axios from "axios";
 import { useRouter } from 'next/router'
 import { useNavigate, useLocation } from "react-router-dom";
 import Web3Modal from "web3modal";
+import { Player } from '@livepeer/react';
+import Image from 'next/image';
 import { rgba } from 'polished';
 import ShareLink from "react-twitter-share-link";
 import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+//import 'reactjs-popup/dist/index.css';
 
+import blenderPoster from '../../public/images/logoonlyblue.png';
 import fileNFT from "../../artifacts/contracts/Genic.sol/FileNFT.json";
 import { fileShareAddress } from "../../config";
 
@@ -151,6 +154,18 @@ export default function Watching() {
  
   };
 
+  const PosterImage = () => {
+    return (
+      <Image
+        src={blenderPoster}
+        layout="fill"
+        objectFit="cover"
+        priority
+        placeholder="blur"
+      />
+    );
+  };
+
   if (loadingState === "loaded" && !nfts.length) {
     return (
       <div>
@@ -173,13 +188,27 @@ export default function Watching() {
   <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 pt-4">
 {nfts.map((nft, i) => (
     <div key={i} className="shadow rounded-xl overflow-hidden min-w-full " style={responsiveIframe}>
+
+<Player
+      title={nft.name}
+      src={nft.sharelink}
+      //playbackId="6d7el73r1y12chxr"
+      autoUrlUpload={{ fallback: true, ipfsGateway: 'https://w3s.link' }}
+      poster={<PosterImage />}
+      showPipButton
+      objectFit="cover"
+      priority
+
+    />
+
+      {/**
       <iframe
         title="video"
         style={responsiveIframe}
         src={`${nft.image}#toolbar=0`}
         className="py-3 object-cover h-full"
       />
-
+ */}
     </div>
   ))
 }

@@ -18,6 +18,7 @@ import 'tailwindcss/tailwind.css';
 import "../styles/globals.css";
 import "../styles/tachyons.min.css";
 import "../styles/spinner.css";
+import "../styles/index.css";
 
 const livepeerClient = createReactClient({
   provider: studioProvider({

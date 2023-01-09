@@ -14,8 +14,8 @@ import {
 } from 'theme-ui';
 import { useState } from 'react';
 import { rgba } from 'polished';
-import Image from 'components/image';
-import ConnectWallet from "components/ConnectWallet";
+import Image from '../components/image';
+import ConnectWallet from "../components/ConnectWallet";
 
 // import serverRack from './assets/images/server-rack.png';
 

@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx, Box, Container } from 'theme-ui';
 import Masonry from 'react-masonry-component';
-import SectionHeading from 'components/section-heading';
-import FaqItem from 'components/cards/faq-item';
+import SectionHeading from '../components/section-heading';
+import FaqItem from '../components/cards/faq-item';
 
 const data = [
   {

@@ -123,7 +123,7 @@ const MintFile = () => {
       <div className="bg-purple-100 text-4xl text-center text-black font-bold pt-10">
         <h1> Upload a Video File</h1>
       </div>
-      <div className="flex justify-center bg-purple-100">
+      <div className="flex justify-center bg-blue-100">
         <div className="w-1/2 flex flex-col pb-12 ">
         <input
             placeholder="Give the file a name"

@@ -4,10 +4,10 @@ import { jsx, Box, Flex, Container, Button } from 'theme-ui';
 import { Fragment, useState } from 'react';
 import Link from 'next/link'
 import Sticky from 'react-stickynode';
-import Image from 'components/image';
-import TopBar from 'components/topbar';
-import LockIcon from 'components/icons/lock';
-import HamburgerMenu from 'components/hamburger';
+import Image from '../../components/image';
+import TopBar from '../../components/topbar';
+import LockIcon from '../../components/icons/lock';
+import HamburgerMenu from '../../components/hamburger';
 
 export default function Header() {
   //  navigate = useRouter();
@@ -70,21 +70,23 @@ export default function Header() {
           <Link href="/publishnews">
           <a>Publish News</a>
           </Link>
-          <Link href="/addfolder">
-          <a>Video Marketplace</a>
+          <Link href="/streamlive">
+          <a>Go Live </a>
           </Link>
-          <Link href="/live">
-          <a>Go-Live </a>
-          </Link>
-          <Link href="/fileshare">
+          <Link href="/videoplayer">
           <a> Video Player</a>
           </Link>
           <Link href="https://web3chat-kezayya.vercel.app/" target="_blank">
           <a>Chat </a>
           </Link>
+          {/**
+          <Link href="/addfolder">
+          <a>Video Marketplace</a>
+          </Link>
           <Link href="/analytics">
           <a>Analytics</a>
           </Link>
+           */}
           </div>
 
             <Flex sx={styles.buttonGroup}>

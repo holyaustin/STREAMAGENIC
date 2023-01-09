@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Box, Heading, Image } from 'theme-ui';
-import { Link } from 'components/link';
+import { Link } from '../../components/link';
 import { rgba } from 'polished';
 
 const Widget = ({ title, items }) => {

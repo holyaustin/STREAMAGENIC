@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui';
-import { NavLink } from 'components/link';
+import { NavLink } from '../../components/link';
 import menuItems from './header.data';
 
 const Navbar = ({ isSticky, isMobile, handleCloseMenu }) => {

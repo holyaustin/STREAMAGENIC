@@ -106,7 +106,7 @@ export function ContentPage () {
         <input id='file' className='db pa2 w-100 ba br2' type='file' onChange={e => setFile(e.target.files[0])} required />
       </div>
       <div className="mx-0 min-w-full flex flex-col items-center">
-      <button type="submit" className="items-center font-bold mt-2 bg-black text-white text-2xl rounded p-4 shadow-lg p-5">
+      <button type="submit" className="items-center font-bold mt-2 bg-black text-white text-2xl rounded shadow-lg p-5">
             Publish News
       </button>
       </div>

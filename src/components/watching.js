@@ -1,5 +1,5 @@
 /** @jsxRuntime classic */
-/** @jsx jsx */
+/** @jsx jsx */ 
 
 import React, { useEffect, useState } from "react";
 import { jsx, Box } from 'theme-ui';
@@ -40,6 +40,7 @@ export default function Watching() {
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState(null);
   const [nfts, setNfts] = useState([]);
+  const [owners, setOwners] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
   useEffect(() => {
     // eslint-disable-next-line no-use-before-define
@@ -59,6 +60,8 @@ export default function Watching() {
   async function Claim() {
     alert("This feature is under development because we want to give you the best expereince");
   }
+
+
   const rpcUrl = "https://matic-mumbai.chainstacklabs.com";
    // const rpcUrl = "localhost";
 
@@ -120,14 +123,26 @@ export default function Watching() {
         view: count,
       };
       console.log("item returned is ", item);
+      setOwners(item.owner);
+      // Calling conditions to send Milestone NFT from NFTPort
+      if (count == 1) {
+        mintViewMilestone();
+      };
+
+      if (count == 100) {
+        mintViewMilestone();
+      };
+
+      if (count == 1000) {
+        mintViewMilestone();
+      };
+
       return item;
     }));
     setNfts(items);
     setLoadingState("loaded");
 
   }
-
-
 
   async function loadCount() {
     /* create a generic provider and query for items */
@@ -144,7 +159,7 @@ export default function Watching() {
       console.log("Count variable is ", vid);
 
       const mintNFTTx = await connectedContract.createViewItem(vid);
-      console.log("View Counter successfully created and added to Blockchain");
+      console.log("View Counter successfully retrieved from Blockchain");
       await mintNFTTx.wait();
       return mintNFTTx;
     } catch (error) {
@@ -153,6 +168,26 @@ export default function Watching() {
     }
  
   };
+// NFTPort Function to Mint Milestone
+  async function mintViewMilestone() {
+    const options = {
+      method: 'POST',
+      url: 'https://api.nftport.xyz/v0/mints/easy/urls',
+      headers: { 'Content-Type': 'application/json', Authorization: '768bfb7a-087d-4ee1-8bb0-5498cc36ad46' },
+      data: {
+        chain: 'polygon',
+        name: 'streamagenic',
+        description: 'NFT for your video getting views. Congratulations!',
+        file_url: 'https://bafkreidugtjoxts62zsi32riqsjlpt643vnqxtaljo4tba2n2dlqvb2jyq.ipfs.w3s.link/',
+        mint_to_address: {owners},
+      },
+    };
+    axios.request(options).then((response) => {
+      console.log(response.data);
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
 
   const PosterImage = () => {
     return (
@@ -218,7 +253,7 @@ export default function Watching() {
 
 	<div className="row-span-3 text-black bg-white text-2xl flex text-left p-3 ">
     {nfts.map((nft, i) => (
-    <div key={i} className="overflow-auto bg-white shadow rounded-xl overflow-hidden">
+    <div key={i} className="overflow-auto bg-white shadow rounded-xl">
       <div className="p-1">
         <p style={{ height: "20px" }} className="text-3xl font-semibold underline">Video Details</p>
       </div>

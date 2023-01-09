@@ -12,7 +12,7 @@ import { Player } from '@livepeer/react';
 import Image from 'next/image';
 import { rgba } from 'polished';
 import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+//import 'reactjs-popup/dist/index.css';
 
 import blenderPoster from '../../public/images/logoonlyblue.png';
 import fileNFT from "../../artifacts/contracts/Genic.sol/FileNFT.json";

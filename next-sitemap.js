@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://kezayya.vercel.app',
+  siteUrl: 'https://stremagenic.vercel.app',
   generateRobotsTxt: true,
   // optional
   // robotsTxtOptions: {

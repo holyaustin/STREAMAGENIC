@@ -13,12 +13,13 @@ import {
 import React, { useEffect } from 'react'
 import { AuthProvider, useAuth } from '@w3ui/react-keyring';
 import { UploaderProvider } from '@w3ui/react-uploader';
-import 'assets/css/react-slick.css';
+import '../assets/css/react-slick.css';
 import 'tailwindcss/tailwind.css';
 import "../styles/globals.css";
 import "../styles/tachyons.min.css";
 import "../styles/spinner.css";
 import "../styles/index.css";
+import "../styles/popup.css";
 
 const livepeerClient = createReactClient({
   provider: studioProvider({

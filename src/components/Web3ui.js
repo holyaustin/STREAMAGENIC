@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { AuthProvider, useAuth } from '@w3ui/react-keyring'
 import { UploaderProvider } from '@w3ui/react-uploader'
-import Image from 'components/image';
+import Image from './image';
 import ContentPage from './ContentPage'
 
 function Web3ui () {

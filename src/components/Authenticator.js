@@ -15,7 +15,7 @@ export default function Authenticator ({ children }) {
         <h1 className='near-white'>Verify your email address!</h1>
         <p>Click the link in the email we sent to {identity && identity.email} to sign in.</p>
         <form onSubmit={e => { e.preventDefault(); cancelRegisterAndStoreIdentity() }}>
-          <button type='submit' className='ph3 pv2'>Cancel</button>
+          <button type='submit' className="items-center font-bold mt-2 bg-black text-white text-2xl rounded shadow-lg p-5">Cancel</button>
         </form>
       </div>
     )
@@ -34,9 +34,11 @@ export default function Authenticator ({ children }) {
     <form onSubmit={handleRegisterSubmit}>
       <div className='mb3'>
         <label htmlFor='email' className='db mb2'>Email address:</label>
-        <input id='email' className='db pa2 w-100' type='email' value={email} onChange={e => setEmail(e.target.value)} required />
+        <input id='email' className=" border rounded p-4 w-100 mb-4" type='email' value={email} onChange={e => setEmail(e.target.value)} required />
       </div>
-      <button type='submit' className='ph3 pv2'>Register</button>
+      <div className="mx-0 min-w-full flex flex-col items-center">
+      <button type='submit' className="items-center font-bold mt-2 bg-black text-white text-2xl rounded shadow-lg p-5">Register</button>
+      </div>
     </form>
   )
 }

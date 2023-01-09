@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Box, Container } from 'theme-ui';
-import SectionHeading from 'components/section-heading';
-import Feature from 'components/cards/feature';
+import SectionHeading from '../components/section-heading';
+import Feature from '../components/cards/feature';
 /**
 import icon1 from 'assets/images/services/1.png';
 import icon2 from 'assets/images/services/2.png';

@@ -39,6 +39,7 @@
     "axios": "^0.27.2",
     "bytes": "^3.1.2",
     "chai": "^4.3.4",
+    "connectkit": "^0.0.2",
     "dotenv": "^16.0.1",
     "eth-revert-reason": "^1.0.3",
     "ethereum-waffle": "^3.4.0",
@@ -56,6 +57,7 @@
     "react": "^18.2.0",
     "react-blockies": "^1.4.1",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-ga": "^3.2.0",
     "react-icons": "^3.11.0",
     "react-masonry-component": "^6.2.1",
@@ -64,23 +66,28 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.1",
     "react-slick": "^0.27.12",
+    "react-spinners": "^0.13.6",
     "react-stickynode": "^3.0.3",
     "react-twitter-share-link": "^1.2.1",
     "reactjs-popup": "^2.0.5",
     "reactstrap": "^9.1.2",
     "serve": "^14.0.1",
     "theme-ui": "^0.3.1",
+    "tus-js-client": "^3.0.0",
+    "wagmi": "^0.6.5",
     "web-vitals": "^2.1.4",
     "web3": "^1.7.4",
     "web3modal": "^1.9.7"
   },
   "devDependencies": {
+    "@types/theme-ui": "^0.6.0",
     "autoprefixer": "^10.4.7",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "next-sitemap": "^1.1.6",
     "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.6"
+    "tailwindcss": "^3.1.6",
+    "typescript": "^4.9.4"
   }
 }

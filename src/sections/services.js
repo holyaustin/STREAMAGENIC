@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Box, Container } from 'theme-ui';
-import SectionHeading from 'components/section-heading';
-import Service from 'components/cards/service';
+import SectionHeading from '../components/section-heading';
+import Service from '../components/cards/service';
 import { transform } from 'framer-motion';
 
 const services = [

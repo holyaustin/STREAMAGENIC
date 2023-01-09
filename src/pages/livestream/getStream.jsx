@@ -1,4 +1,9 @@
 import { useState } from 'react';
+import { ThemeProvider } from 'theme-ui';
+import theme from '../../theme';
+import SEO from '../../components/seo';
+import Layout from '../../components/layout2';
+import { jsx, Box } from 'theme-ui';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Player } from '@livepeer/react';
@@ -19,15 +24,22 @@ export default function GetStreamById() {
   }
 
   return (
-    <main className={styles.main}>
+    <ThemeProvider theme={theme}>
+    <Layout>
+      <SEO
+        title="Live Stream"
+        description="Share file"
+      />
+    <Box as="section"  sx={styles2.section}>
+    <main className="{styles.main} bg-white pt-2">
       <h1 className={styles.title}>Get Stream By Id</h1>
 
       <form onSubmit={getStream} method='GET' className={styles.card}>
-        <label htmlFor='asset' className='text-base'>
+        <label htmlFor='asset' className='text-2xl'>
           Stream ID:{' '}
         </label>
         <input
-          className='border rounded-md text-base mx-2'
+          className="text-2xl border rounded p-4 w-40 mb-4 text-black"
           type='search'
           name='query'
           value={streamId}
@@ -36,7 +48,7 @@ export default function GetStreamById() {
         />
         <button
           type='submit'
-          className='m-0  rounded-md p-1 bg-blue-600 hover:bg-blue-400 text-base text-white'
+          className='m-0  rounded-md p-4 bg-blue-600 hover:bg-blue-400 text-2xl text-white'
         >
           Get Stream
         </button>
@@ -70,5 +82,16 @@ export default function GetStreamById() {
         </div>
       )}
     </main>
+    </Box>
+    </Layout>
+    </ThemeProvider>
   );
 }
+
+const styles2 = {
+  section: {
+    backgroundColor: 'primary',
+    pt: [17, null, null, 20, null],
+    pb: [6, null, null, 12, 16],
+  },
+ };

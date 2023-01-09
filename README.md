@@ -6,7 +6,7 @@ A Decentralized Video News Sharing Platform where users upload news on demand.
 
 ## Introduction 
 
-Genic is a web3 project with the aim of helping creators store video files and share them easily while owning their content. Decentralized file storage and sharing system. This project intends to build a web3 version of google drive or dropbox for file storage and sharing. It uses the open zeppelin ERC721 standard to store file metadata ERI in an EVM-based smart contract. The smart contract is deployed on Polygon Mumbai. Polygon which is an Ethereum scaling and POS Blockchain was the best choice for deployment to reduce the cost of transactions and interaction with the blockchain.
+StremaGenic is a web3 project with the aim of helping creators store video files and share them easily while owning their content. Decentralized file storage and sharing system. This project intends to build a web3 version of google drive or dropbox for file storage and sharing. It uses the open zeppelin ERC721 standard to store file metadata ERI in an EVM-based smart contract. The smart contract is deployed on Polygon Mumbai. Polygon which is an Ethereum scaling and POS Blockchain was the best choice for deployment to reduce the cost of transactions and interaction with the blockchain.
 
 ## Web 3.0 technologies Used
 
@@ -28,9 +28,9 @@ The smart contract uses ERC-721 specification to hold metadata URI, ethers.js wa
 Live Dapp on Vercel: - <https://streamagenic.vercel.app/>
 
 Deployed to Polygon Chain:
-  export const fileShareAddress = "0xe078fe7a93017f8e18c1c52e79632d0b94c56c26"
+  Polygon Mumbai deployed Address = "0x92b3556042052c12c962bEf9aCcad837405130a8"
 
-  <http://mumbai.polyscan.com/#/contract/0xe078fe7a93017f8e18c1c52e79632d0b94c56c26>
+  <http://mumbai.polyscan.com/#/contract/0x92b3556042052c12c962bEf9aCcad837405130a8>
 
  Youtube video link: <https://youtu.be/kZvxCGMPci8>
 

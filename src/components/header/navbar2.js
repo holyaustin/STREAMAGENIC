@@ -1,9 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui';
-import { NavLink } from 'components/link';
+import { NavLink } from '../../components/link';
 import { useRouter } from 'next/router'
-//import menuItems from './header2.data';
+import menuItems from './header2.data';
 
 const Navbar2 = ({ isSticky, isMobile, handleCloseMenu }) => {
   const navigate = useRouter();
@@ -16,8 +16,8 @@ const Navbar2 = ({ isSticky, isMobile, handleCloseMenu }) => {
       }`}
     >
 
-      {menuItems.map(({ path, label }, i) => (
-        <NavLink key={i} path={path} label={label} onClick={handleCloseMenu} />
+        {menuItems.map(({ path, label }, i) => (
+        <NavLink to={path} key={i} path={path} label={label} onClick={handleCloseMenu} />
       ))}
     </Box>
   );
@@ -72,10 +72,10 @@ const styles = {
     '&.is-sticky': {
       top: 60,
       a: {
-        color: 'text',
+        color: 'blue',
       },
       '.active': {
-        color: 'text',
+        color: 'primary',
       },
     },
   },

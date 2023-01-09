@@ -4,20 +4,25 @@ export default [
     label: 'Home',
   },
   {
-    path: '/dashboard',
-    label: 'Explore',
+    path: '/explore',
+    label: 'News-On-Demand',
   },
   {
-    path: '/addfile',
-    label: 'Upload-Video',
+    path: '/publishnews',
+    label: 'Publish-News',
   },
   {
-    path: '/addfolder',
-    label: 'GO-Live',
+    path: '/streamlive',
+    label: 'Stream-Live',
   },
   {
-    path: '/activities',
-    label: 'Activities',
+    path: '/videoplayer',
+    label: 'Video-Player',
   },
+  {
+    path: 'https://web3chat-kezayya.vercel.app/',
+    label: 'Chat',
+  },
+
 
 ];

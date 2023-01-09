@@ -7,7 +7,7 @@ import { transform } from 'framer-motion';
 
 const services = [
   {
-    title: 'creator owned content',
+    title: 'Creator owned content',
     price: 'coc, etc'
   },
   {
@@ -23,19 +23,19 @@ const services = [
     price: 'as, etc',
   },
   {
-    title: 'Video file Storage',
+    title: 'Fast video transcoding',
     price: 'mp4, avi, mp3, hevc, etc ',
   },
   {
-    title: 'online video streaming',
-    price: 'ovs, etc',
+    title: 'Fast video playback url',
+    price: 'fvpu, etc',
   },
   {
     title: 'Live event streaming',
     price: 'les, etc ',
   },
   {
-    title: 'chat file share',
+    title: 'Chat file share',
     price: 'Anyother file type'
   },
 ];
@@ -46,7 +46,7 @@ const Services = () => {
       <Container>
         <SectionHeading
           slogan="Ideal solutions for you"
-          title="Didn’t find your video? Don't worry, Just upload it!"
+          title="That your video news can make some money? Don't worry, Just upload it!"
         />
         <Box sx={styles.grid}>
           {services.map((service, i) => (
@@ -69,6 +69,7 @@ const styles = {
     gap: [3, null, null, 4],
     display: 'grid',
     justifyContent: 'center',
+    fontSize: "40px",
     gridTemplateColumns: [
       'repeat(2, 1fr)',
       null,

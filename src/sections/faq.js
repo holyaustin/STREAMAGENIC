@@ -24,7 +24,7 @@ const data = [
   {
     id: 4,
     ques: 'Is this service free?',
-    ans: `This service is free for as much storage as you want. Thanks to Protocol lab. IPFS / Filecoin and Livepeer who are sponsors of this decentralized service.`,
+    ans: `This service is free for as much storage as you want. Thanks to Protocol lab. IPFS / Filecoin (Web3UI) and Livepeer (Livepeer.js) who are partners of this decentralized service.`,
   },
 
   {
@@ -34,8 +34,8 @@ const data = [
   },
   {
     id: 6,
-    ques: 'Where can i know more about this KEZAYYA?',
-    ans: `We are putting up a comprehensive "Getting started documentamtion". meanwhile engage our support team on discord and do follow us on Twitter.`,
+    ques: 'Where can i know more about this STREMAGENIC?',
+    ans: `We are putting up a comprehensive "Getting started documentation". mean-while engage our support team on discord and do follow us on Twitter.`,
   },
 ];
 

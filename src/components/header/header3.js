@@ -4,11 +4,10 @@ import { jsx, Box, Flex, Container, Button } from 'theme-ui';
 import { Fragment, useState } from 'react';
 import Link from 'next/link'
 import Sticky from 'react-stickynode';
-import Image from '../../components/image';
-import TopBar from '../../components/topbar';
-import LockIcon from '../../components/icons/lock';
-import HamburgerMenu from '../../components/hamburger';
-import Navbar2 from './navbar2';
+import Image from '../image';
+import TopBar from '../topbar';
+import LockIcon from '../icons/lock';
+import HamburgerMenu from '../hamburger';
 
 export default function Header() {
   //  navigate = useRouter();
@@ -57,14 +56,6 @@ export default function Header() {
         >
           <Container sx={styles.container}>
           <Image src="/images/logoonly.png" loading="lazy" sx={styles.logo} alt="logo" />
-{/**
-          <Navbar2
-              isSticky={state.isSticky}
-              isMobile={state.isMobileMenu}
-              handleCloseMenu={handleCloseMenu}
-            />
- */}
-
           <div 
           sx={styles.navbar}
           className={state.isSticky ? 'is-sticky' : ''}
@@ -86,18 +77,17 @@ export default function Header() {
           <a> Video-Player</a>
           </Link>
           <Link href="https://web3chat-kezayya.vercel.app/" target="_blank">
-          <a target="_blank">Chat </a>
+          <a>Chat </a>
           </Link>
-          
-{/**
+          {/**
           <Link href="/addfolder">
           <a>Video Marketplace</a>
           </Link>
           <Link href="/analytics">
           <a>Analytics</a>
           </Link>
-  */}         
-          </div> 
+           */}
+          </div>
 
             <Flex sx={styles.buttonGroup}>
             <Link href="/">

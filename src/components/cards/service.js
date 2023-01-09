@@ -29,14 +29,14 @@ const styles = {
     },
     p: {
       fontWeight: 500,
-      fontSize: [1, null, null, '17px'],
+      fontSize: [1, null, null, '24px'],
       lineHeight: 1.77,
       color: 'heading',
     },
     span: {
       color: 'primary',
       fontWeight: 700,
-      fontSize: [1, null, null, '15px'],
+      fontSize: [1, null, null, '24px'],
       lineHeight: 2,
     },
   },

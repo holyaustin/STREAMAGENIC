@@ -1,4 +1,9 @@
 import { FormEvent, useState } from 'react';
+import { ThemeProvider } from 'theme-ui';
+import theme from '../../theme';
+import SEO from '../../components/seo';
+import Layout from '../../components/layout2';
+import { jsx, Box } from 'theme-ui';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../../../public/images/logoonly.png';
@@ -25,6 +30,7 @@ console.log(data);
   }
 
   return (
+    <Box as="section"  sx={styles2.section}>
     <main className={styles.main}>
       <h1 className={styles.title}>Get Sessions By Stream Id</h1>
 
@@ -63,5 +69,14 @@ console.log(data);
         ))}
         </ul>
     </main>
+    </Box>
   );
 }
+
+const styles2 = {
+  section: {
+    backgroundColor: 'primary',
+    pt: [17, null, null, 20, null],
+    pb: [6, null, null, 12, 16],
+  },
+ };

@@ -89,6 +89,8 @@
 .card label {
   margin: 0 0 1rem 0;
   font-size: 1rem;
+  @apply
+  text-2xl
 }
 
 
@@ -99,12 +101,12 @@
 }
 .card button {
   @apply
-  m-0
+  m-3
   rounded-md
-  p-2
+  p-3
   bg-blue-600
   hover:bg-blue-400
-  text-base
+  text-2xl
   text-white
 }
 

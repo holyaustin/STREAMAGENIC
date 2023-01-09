@@ -20,14 +20,6 @@ export default function IndexPage() {
         <Services />
         <UltimateFeatures />
         <Faq />
-{/**
- *      <PremiumFeature />
-        <CustomerSupport />
-        <Pricing />
-        <Testimonials />
-        <Blog />
-        <Support />
-   */}
       </Layout>
     </ThemeProvider>
   );

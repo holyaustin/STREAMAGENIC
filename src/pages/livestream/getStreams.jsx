@@ -1,4 +1,9 @@
 import React from 'react';
+import { ThemeProvider } from 'theme-ui';
+import theme from '../../theme';
+import SEO from '../../components/seo';
+import Layout from '../../components/layout2';
+import { jsx, Box } from 'theme-ui';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Player } from '@livepeer/react';
@@ -29,7 +34,14 @@ export default function GetStreams({streams}) {
   
   
   return (
-    <main className={styles.main}>
+    <ThemeProvider theme={theme}>
+    <Layout>
+      <SEO
+        title="Live Stream"
+        description="Share file"
+      />
+    <Box as="section"  sx={styles2.section}>
+    <main className="{styles.main} bg-white pt-2">
       <h1 className={ styles.title }>All Streams</h1>
       
       <ul className={styles.grid}>
@@ -60,5 +72,16 @@ export default function GetStreams({streams}) {
         ))}
       </ul>
     </main>
+    </Box>
+    </Layout>
+    </ThemeProvider>
   );
 }
+
+const styles2 = {
+  section: {
+    backgroundColor: 'primary',
+    pt: [17, null, null, 20, null],
+    pb: [6, null, null, 12, 16],
+  },
+ };

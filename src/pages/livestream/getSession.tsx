@@ -1,4 +1,9 @@
 import { FormEvent, useState } from 'react';
+import { ThemeProvider } from 'theme-ui';
+import theme from '../../theme';
+import SEO from '../../components/seo';
+import Layout from '../../components/layout2';
+import { jsx, Box } from 'theme-ui';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../../../public/images/logoonly.png';
@@ -18,6 +23,7 @@ export default function GetSessionById() {
   }
 
   return (
+    <Box as="section"  sx={styles2.section}>
     <main className={styles.main}>
       <h1 className={styles.title}>Get Session By Id</h1>
 
@@ -62,5 +68,14 @@ export default function GetSessionById() {
         </div>
       )}
     </main>
+    </Box>
   );
 }
+
+const styles2 = {
+  section: {
+    backgroundColor: 'primary',
+    pt: [17, null, null, 20, null],
+    pb: [6, null, null, 12, 16],
+  },
+ };

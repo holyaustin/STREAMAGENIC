@@ -29,7 +29,7 @@ export function ContentPage () {
     try {
       console.log("About to upload file", file)
       setStatus('uploading')
-      setTxStatus("Oops, Please describe and choose a video to Upload using W3UI.");
+      setTxStatus("Oops, Something went wrong. Kindly choose a video to Upload along with its description using W3UI.");
       console.log("After setting status to Uploding")
       const cid = await uploader.uploadFile(file)
       console.log("const cid is:", cid)

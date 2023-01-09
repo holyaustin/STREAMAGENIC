@@ -65,8 +65,8 @@
 .card {
   @apply
   shadow-xl
-  m-6
-  p-5
+  m-24
+  p-12
   border-2
   rounded-md
   border-solid

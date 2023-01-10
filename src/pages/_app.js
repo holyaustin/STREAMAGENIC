@@ -4,13 +4,13 @@ import { useEffect } from 'react';
 import Router from 'next/router';
 import { initGA, logPageView } from 'analytics';
 */
+import React, { useEffect } from 'react'
 import {
   LivepeerConfig,
   createReactClient,
   studioProvider,
 } from '@livepeer/react';
-
-import React, { useEffect } from 'react'
+import Head from "next/head";
 import { AuthProvider, useAuth } from '@w3ui/react-keyring';
 import { UploaderProvider } from '@w3ui/react-uploader';
 import '../assets/css/react-slick.css';
@@ -31,7 +31,11 @@ export default function CustomApp({ Component, pageProps }) {
   
   // return 
   return (
+ 
     <LivepeerConfig client={livepeerClient}>
+         <Head>
+    <link rel="shortcut icon" href="/images/logoonlyblue.png" />
+  </Head>
       {/** <CreateAndViewAsset /> */}
       <Component {...pageProps} /> 
     </LivepeerConfig>

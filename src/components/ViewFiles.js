@@ -29,10 +29,12 @@ export default function ViewFiles() {
     loadfileNFT();
   }, []);
 
-  async function loadfileNFT() {
+  const rpcUrl = "https://matic-mumbai.chainstacklabs.com";
+   // const rpcUrl = "localhost";
 
+  async function loadfileNFT() {
     const web3Modal = new Web3Modal({
-      network: 'mainnet',
+      //network: 'mainnet',
       cacheProvider: true,
     })
     const connection = await web3Modal.connect();

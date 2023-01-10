@@ -41,11 +41,12 @@ export default function Watching() {
   const [errorMessage, setErrorMessage] = useState(null);
   const [nfts, setNfts] = useState([]);
   const [owners, setOwners] = useState([]);
+  const [ensName, setEnsName] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
   useEffect(() => {
     // eslint-disable-next-line no-use-before-define
     loadVideo();
-    //loadCount();
+    loadCount();
     console.log("Counter executed")
   }, []);
 
@@ -61,6 +62,15 @@ export default function Watching() {
     alert("This feature is under development because we want to give you the best expereince");
   }
 
+  async function getENSName() {
+    const address = owners;
+    const RPC2 = "https://eth.llamarpc.com";
+    const provider = new ethers.providers.JsonRpcProvider(RPC2);
+    const ename = await provider.lookupAddress(address); 
+    console.log("ENS name is ", ename)
+    return ename;
+    
+  }
 
   const rpcUrl = "https://matic-mumbai.chainstacklabs.com";
    // const rpcUrl = "localhost";
@@ -71,7 +81,7 @@ export default function Watching() {
 
   async function loadVideo() {
     /* create a generic provider and query for items */
-      console.log("loading News for item", props.vid);
+    console.log("loading News for item", props.vid);
     const vid = props.vid;
     console.log("vid is ", vid);
 
@@ -98,6 +108,8 @@ export default function Watching() {
       console.log("Http Uri is ", httpUri);
       const meta = await axios.get(tokenUri);
       
+      //getENSName();
+
       const count = (data2.toNumber())+1
       console.log("News data fetched from contract");
       console.log("data2 value is ", data2);
@@ -119,11 +131,15 @@ export default function Watching() {
         description: description,
         size: filesize,
         sharelink: httpUri,
-        owner: i.owner,
+        owner: i.owner.toString(),
         view: count,
       };
       console.log("item returned is ", item);
       setOwners(item.owner);
+      // ethers.js automatically checks that the forward resolution matches.
+      //let ensAddress = item.owner;
+      //let NameLookup = await provider.lookupAddress(ensAddress);
+      //setEnsName(NameLookup);
       // Calling conditions to send Milestone NFT from NFTPort
       if (count == 1) {
         mintViewMilestone();
@@ -253,25 +269,26 @@ export default function Watching() {
 
 	<div className="row-span-3 text-black bg-white text-2xl flex text-left p-3 ">
     {nfts.map((nft, i) => (
-    <div key={i} className="overflow-auto bg-white shadow rounded-xl">
+    <div key={i} className="overflow-auto tect-blue-800  bg-white shadow rounded-xl font-bold">
       <div className="p-1">
         <p style={{ height: "20px" }} className="text-3xl font-semibold underline">Video Details</p>
       </div>
+      <br/>
+      <div className="p-1">
+        <p style={{ height: "20px" }} className="text-xl font-semibold"> No. of Views : {nft.view}</p>
+      </div>
+
       <br/>
       <div className="p-1">
         <p style={{ height: "20px" }} className="text-xl font-semibold">Video id: {nft.tokenId}</p>
       </div>
       <br/>
       <div className="p-1">
-        <p style={{ height: "20px" }} className="text-xl font-semibold">Video Name : {nft.name}</p>
+        <p style={{ height: "40px" }} className="text-xl font-semibold">Video Name : {nft.name}</p>
       </div>
       <br/>
       <div className="p-1">
-        <p style={{ height: "20px" }} className="text-xl font-semibold">Description: {nft.description}</p>
-      </div>
-      <br/>
-      <div className="p-1">
-        <p style={{ height: "20px" }} className="text-xl font-semibold"> Views : {nft.view}</p>
+        <p style={{ height: "40px" }} className="text-xl font-semibold">Description: {nft.description}</p>
       </div>
       <br/>
       <div className="p-1">
@@ -301,7 +318,7 @@ export default function Watching() {
     <div className="p-4">
                   <button type="button" className="w-full bg-blue-800 text-white font-bold py-2 px-12 border-b-4 border-blue-200 hover:border-blue-500 rounded-full" onClick={() => Claim()}>Drop your comment</button>
                 </div>
-    <div className="p-4">
+                <div className="p-4">
                   <button type="button" className="w-full bg-blue-800 text-white font-bold py-2 px-12 border-b-4 border-blue-200 hover:border-blue-500 rounded-full">
                     <a
                       className="social-icon-link github"
@@ -320,6 +337,19 @@ export default function Watching() {
                   <a href={link} target="_blank" rel="noreferrer">Share on Twitter</a></button>
                   )}
             </ShareLink>
+                </div>
+
+                <div className="p-4">
+                  <button type="button" className="w-full bg-blue-800 text-white font-bold py-2 px-12 border-b-4 border-blue-200 hover:border-blue-500 rounded-full">
+                    <a
+                      className="social-icon-link github"
+                      href="https://streamagenic-meeting.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="chat"
+                    >Video Conference 
+                    </a>
+                  </button>
                 </div>
 
             
